@@ -25,9 +25,9 @@ def index():
 def start():
     data = bottle.request.json
 
-
     global board_width
     global board_height
+
     board_width = data["width"]
     board_height = data["height"]
 
@@ -85,6 +85,8 @@ def myPosition(snakes):
             return s["coords"][0]
 
 def canMove(snake, m):
+    global board_width
+    global board_height
 
     if m == 'right':
         print "snake X: ", snake[0]
