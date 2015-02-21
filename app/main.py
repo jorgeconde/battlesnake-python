@@ -19,6 +19,7 @@ def canMove(snake, m):
         print "snake X: ", snake[0]
 
         if (snake[0] < board.width - 1) and past_move != 'left':
+            print "YEA!"
             return True
 
     return False
@@ -61,6 +62,7 @@ def move():
         head_position = myPosition(data["snakes"])
         print "head position", head_position
         if canMove(head_position, 'right'):
+            print "GOING TO MOVE RIGHT"
             move = 'right'
         else:
             move = 'up'
