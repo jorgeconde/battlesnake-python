@@ -19,9 +19,11 @@ def index():
 def start():
     data = bottle.request.json
 
-
-    global board.width = data["width"]
-    global board.height = data["height"]
+    global board.width
+    global board.height
+    
+    board.width = data["width"]
+    board.height = data["height"]
 
     print "Board: ", board.width, board.height
 
