@@ -36,7 +36,7 @@ def move():
     data = bottle.request.json
     move = ""
 
-    if data.turn == 1:
+    if data["turn"] == 1:
         move = 'right'
 
 
