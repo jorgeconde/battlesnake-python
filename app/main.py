@@ -11,7 +11,7 @@ def setBoardWidth(w):
     global board
     board.wdith = w
 
-def setBoardWidthHeight(h):
+def setBoardHeight(h):
     global board
     board.height = h
 
