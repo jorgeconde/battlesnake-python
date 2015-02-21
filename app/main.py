@@ -8,20 +8,6 @@ head_position = ""
 board_width = 0
 board_height = 0
 
-def setBoardWidth(w):
-    global board_width
-    board_width = w
-
-def setBoardHeight(h):
-    global board_height
-    board_height = h
-
-def boardWidth():
-    return board_width
-
-def boardHeight():
-    return board_height
-
 
 
 
@@ -45,7 +31,7 @@ def start():
     board_width = data["width"]
     board_height = data["height"]
 
-    print "Board: ", boardWidth(), boardHeight()
+    print "Board: ", board_width, board_height
 
     return json.dumps({
         'name': 'Blank',
@@ -101,11 +87,11 @@ def canMove(snake, m):
 
     if m == 'right':
         print "snake X: ", snake[0]
-        print "Board Width: ", boardWidth()
+        print "Board Width: ", board_width
 
         print past_move
 
-        if (snake[0] < boardWidth() - 1) and past_move != 'left':
+        if (snake[0] < board_width - 1) and past_move != 'left':
             return True
 
     elif m == 'up':
