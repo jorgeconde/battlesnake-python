@@ -8,7 +8,7 @@ head_position = ""
 board = Board(0,0)
 
 
-"""
+
 def myPosition(snakes):
     for s in snakes:
         if s["name"] == "Blank":
@@ -17,9 +17,9 @@ def myPosition(snakes):
 def canMove(snake, m):
     if m == 'right':
         print snake[0], str(board.width -1 ), past_move
-        if (snake[0] < width - 1) and past_move != 'left':
+        if (snake[0] < board.width - 1) and past_move != 'left':
             return true
-            """
+
 
 
 @bottle.get('/')
@@ -35,7 +35,8 @@ def index():
 def start():
     data = bottle.request.json
 
-    print board.width, board.height
+    board.width = data["width"]
+    board.height = data["height"]
 
     return json.dumps({
         'name': 'Blank',
@@ -50,7 +51,7 @@ def move():
     data = bottle.request.json
     move = "right"
 
-    """
+    
     if data["turn"] == 1:
         head_position = myPosition(data["snakes"])
         print "head position", head_position
@@ -58,7 +59,7 @@ def move():
             move = 'right'
         else:
             move = 'up'
-    """
+    
 
 
 
