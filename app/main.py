@@ -20,8 +20,8 @@ def index():
 def start():
     data = bottle.request.json
 
-    width = data.width
-    height = data.height
+    width = data["width"]
+    height = data["height"]
 
     return json.dumps({
         'name': 'Blank',
@@ -38,7 +38,7 @@ def move():
 
     if data.turn == 1:
         move = 'right'
-        
+
 
     return json.dumps({
         'move': move,
