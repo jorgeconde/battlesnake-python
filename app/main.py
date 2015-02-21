@@ -16,11 +16,16 @@ def myPosition(snakes):
 
 def canMove(snake, m):
     global board
+
     if m == 'right':
         print "snake X: ", snake[0]
         print "Board Width: ", board.width
 
         if (snake[0] < board.width - 1) and past_move != 'left':
+            return True
+
+    elif m == 'up':
+        if (board.height > 0) and past_move != 'down':
             return True
 
     return False
@@ -63,14 +68,18 @@ def move():
     head_position = myPosition(data["snakes"])
     
     if data["turn"] == 1:
-        
-        print "head position", head_position
-
-    else:
         if canMove(head_position, 'right'):
             move = 'right'
         else:
             move = 'up'
+
+    else:
+        if canMove(head_position, 'right'):
+            move = 'right'
+        elif canMove(head_position, 'up'):
+            move = 'up'
+        else:
+            move = 'left'
     
 
 
