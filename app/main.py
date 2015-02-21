@@ -5,21 +5,22 @@ from board import Board
 past_move = ""
 head_position = ""
 
-board = Board(0,0)
+board_width = 0
+board_height = 0
 
 def setBoardWidth(w):
-    global board
-    board.width = w
+    global board_width
+    board_width = w
 
 def setBoardHeight(h):
-    global board
-    board.height = h
+    global board_height
+    global_height = h
 
 def boardWidth():
-    return board.width
+    return global_width
 
 def boardHeight():
-    return board.height
+    return global_height
 
 
 
