@@ -5,7 +5,7 @@ from board import Board
 past_move = ""
 head_position = ""
 
-global board = Board(0,0)
+board = Board(0,0)
 
 
 
