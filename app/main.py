@@ -17,6 +17,7 @@ def myPosition(snakes):
 def canMove(snake, m):
     if m == 'right':
         print "snake X: ", snake[0]
+        print "Board Width: ", board.width
 
         if (snake[0] < board.width - 1) and past_move != 'left':
             return True
@@ -56,11 +57,12 @@ def move():
     data = bottle.request.json
     move = ""
 
+    head_position = myPosition(data["snakes"])
     
     if data["turn"] == 1:
-        head_position = myPosition(data["snakes"])
-        print "head position", head_position
         
+        print "head position", head_position
+
     else:
         if canMove(head_position, 'right'):
             move = 'right'
