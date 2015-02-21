@@ -9,26 +9,7 @@ board = Board(0,0)
 
 
 
-def myPosition(snakes):
-    for s in snakes:
-        if s["name"] == "Blank":
-            return s["coords"][0]
 
-def canMove(snake, m):
-    global board
-
-    if m == 'right':
-        print "snake X: ", snake[0]
-        print "Board Width: ", global board.width
-
-        if (snake[0] < board.width - 1) and past_move != 'left':
-            return True
-
-    elif m == 'up':
-        if (board.height > 0) and past_move != 'down':
-            return True
-
-    return False
 
 
 
@@ -93,6 +74,31 @@ def end():
     data = bottle.request.json
 
     return json.dumps({})
+
+
+
+
+def myPosition(snakes):
+    for s in snakes:
+        if s["name"] == "Blank":
+            return s["coords"][0]
+
+def canMove(snake, m):
+    
+    global board
+
+    if m == 'right':
+        print "snake X: ", snake[0]
+        print "Board Width: ", board.width
+
+        if (snake[0] < board.width - 1) and past_move != 'left':
+            return True
+
+    elif m == 'up':
+        if (board.height > 0) and past_move != 'down':
+            return True
+
+    return False
 
 
 # Expose WSGI app
