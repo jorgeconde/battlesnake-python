@@ -98,13 +98,13 @@ def canMove(snake, m):
 
     if m == 'right':
         print "snake X: ", snake[0]
-        print "Board Width: ", board.width
+        print "Board Width: ", boardWidth()
 
-        if (snake[0] < board.width - 1) and past_move != 'left':
+        if (snake[0] < boardWidth() - 1) and past_move != 'left':
             return True
 
     elif m == 'up':
-        if (board.height > 0) and past_move != 'down':
+        if (boardHeight() > 0) and past_move != 'down':
             return True
 
     return False
