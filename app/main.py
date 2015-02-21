@@ -1,8 +1,11 @@
 import bottle
 import json
+from board import Board
 
 past_move = ""
 head_position = ""
+
+board = Board(0,0)
 
 
 """
@@ -32,6 +35,7 @@ def index():
 def start():
     data = bottle.request.json
 
+    print board.width, board.height
 
     return json.dumps({
         'name': 'Blank',
