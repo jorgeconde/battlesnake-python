@@ -9,7 +9,7 @@ board = Board(0,0)
 
 def setBoardWidth(w):
     global board
-    board.wdith = w
+    board.width = w
 
 def setBoardHeight(h):
     global board
