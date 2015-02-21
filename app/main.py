@@ -12,6 +12,8 @@ class Board:
         self.width = w
         self.height = h
 
+board = Board(0,0)
+
 def myPosition(snakes):
     for s in snakes:
         if s["name"] == "Blank":
@@ -37,7 +39,8 @@ def index():
 def start():
     data = bottle.request.json
 
-    board = Board(data["width"], data["height"])
+    board.width = data["width"]
+    board.height = data["height"])
 
     print "Board:", board.width, board.height
 
