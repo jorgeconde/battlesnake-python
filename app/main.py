@@ -5,7 +5,7 @@ from board import Board
 past_move = ""
 head_position = ""
 
-board = Board(0,0)
+global board = Board(0,0)
 
 
 
@@ -17,9 +17,9 @@ def myPosition(snakes):
 def canMove(snake, m):
     if m == 'right':
         print "snake X: ", snake[0]
-        print "Board Width: ", board.width
+        print "Board Width: ", global board.width
 
-        if (snake[0] < board.width - 1) and past_move != 'left':
+        if (snake[0] < global board.width - 1) and past_move != 'left':
             return True
 
     return False
@@ -39,8 +39,8 @@ def index():
 def start():
     data = bottle.request.json
 
-    board.width = data["width"]
-    board.height = data["height"]
+    global board.width = data["width"]
+    global board.height = data["height"]
 
     print "Board: ", board.width, board.height
 
