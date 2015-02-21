@@ -7,10 +7,12 @@ width = 0
 height = 0
 
 
-class Board:
+class Board():
+
     def __init__(self, w, h):
         self.width = w
         self.height = h
+
 
 board = Board(0,0)
 
