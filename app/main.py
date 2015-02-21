@@ -54,12 +54,18 @@ def start():
 @bottle.post('/move')
 def move():
     data = bottle.request.json
-    move = "right"
+    move = ""
 
     
     if data["turn"] == 1:
         head_position = myPosition(data["snakes"])
         print "head position", head_position
+        if canMove(head_position, 'right'):
+            move = 'right'
+        else:
+            move = 'up'
+
+    else:
         if canMove(head_position, 'right'):
             move = 'right'
         else:
