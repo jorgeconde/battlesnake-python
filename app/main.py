@@ -19,7 +19,7 @@ def canMove(snake, m):
 
     if m == 'right':
         print "snake X: ", snake[0]
-        print "Board Width: ", board.width
+        print "Board Width: ", global board.width
 
         if (snake[0] < board.width - 1) and past_move != 'left':
             return True
@@ -80,7 +80,7 @@ def move():
             move = 'left'
     
 
-
+    past_move = move
 
     return json.dumps({
         'move': move,
