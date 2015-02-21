@@ -11,8 +11,6 @@ board = Board(0,0)
 
 
 
-
-
 @bottle.get('/')
 def index():
     return """
@@ -84,8 +82,6 @@ def myPosition(snakes):
             return s["coords"][0]
 
 def canMove(snake, m):
-    
-    global board
 
     if m == 'right':
         print "snake X: ", snake[0]
