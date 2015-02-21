@@ -1,6 +1,11 @@
 import bottle
 import json
 
+moving = ""
+head_position = ""
+width = 0
+height = 0
+
 
 @bottle.get('/')
 def index():
@@ -15,6 +20,9 @@ def index():
 def start():
     data = bottle.request.json
 
+    width = data.width
+    height = data.height
+
     return json.dumps({
         'name': 'Blank',
         'color': '#566AE4',
@@ -26,9 +34,14 @@ def start():
 @bottle.post('/move')
 def move():
     data = bottle.request.json
+    move = ""
+
+    if data.turn == 1:
+        move = 'right'
+        
 
     return json.dumps({
-        'move': 'right',
+        'move': move,
         'taunt': 'battlesnake-python!'
     })
 
