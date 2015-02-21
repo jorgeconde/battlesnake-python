@@ -38,6 +38,8 @@ def start():
     board.width = data["width"]
     board.height = data["height"]
 
+    print "Board: ", board.width, board.height
+
     return json.dumps({
         'name': 'Blank',
         'color': '#566AE4',
