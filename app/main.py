@@ -31,7 +31,7 @@ def start():
     data = bottle.request.json
 
     setWidth(data["width"])
-    setHeight(board.height = data["height"])
+    setHeight(data["height"])
 
     print "Board: ", width, height
 
