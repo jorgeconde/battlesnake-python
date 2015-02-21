@@ -16,9 +16,12 @@ def myPosition(snakes):
 
 def canMove(snake, m):
     if m == 'right':
-        print snake[0], str(board.width), past_move
+        print "snake X: ", snake[0]
+
         if (snake[0] < board.width - 1) and past_move != 'left':
             return True
+
+    return False
 
 
 
