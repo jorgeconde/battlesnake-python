@@ -1,8 +1,5 @@
-class Board():
-
-    def __init__(self, w, h):
-        self.width = w
-        self.height = h
+width = 0
+height = 0
 
 
 
