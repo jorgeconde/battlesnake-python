@@ -1,9 +1,20 @@
 import bottle
 import json
-import board
+
 
 past_move = ""
 head_position = ""
+
+width = 0
+height = 0
+
+def setWidth(w):
+    global width
+    width = w
+
+def setHeight(h):
+    global height
+    height = h
 
 
 @bottle.get('/')
@@ -19,13 +30,10 @@ def index():
 def start():
     data = bottle.request.json
 
-    global board.width
-    global board.height
-    
-    board.width = data["width"]
-    board.height = data["height"]
+    setWidth(data["width"])
+    setHeight(board.height = data["height"])
 
-    print "Board: ", board.width, board.height
+    print "Board: ", width, height
 
     return json.dumps({
         'name': 'Blank',
@@ -82,10 +90,10 @@ def canMove(snake, m):
 
     if m == 'right':
         print "snake X: ", snake[0]
-        print "Board Width: ", board.width
+        print "Board Width: ", width
         print past_move
 
-        if (snake[0] < board.width - 1) and past_move != 'left':
+        if (snake[0] < width - 1) and past_move != 'left':
             return True
 
     elif m == 'up':
