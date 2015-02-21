@@ -36,6 +36,9 @@ def start():
     width = data["width"]
     height = data["height"]
 
+    print "width", width
+    print "height", height
+
     return json.dumps({
         'name': 'Blank',
         'color': '#566AE4',
