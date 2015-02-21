@@ -16,8 +16,8 @@ def start():
     data = bottle.request.json
 
     return json.dumps({
-        'name': 'battlesnake-python',
-        'color': '#00ff00',
+        'name': 'Blank',
+        'color': '#566AE4',
         'head_url': 'http://battlesnake-python.herokuapp.com',
         'taunt': 'battlesnake-python!'
     })
@@ -28,7 +28,7 @@ def move():
     data = bottle.request.json
 
     return json.dumps({
-        'move': 'left',
+        'move': 'right',
         'taunt': 'battlesnake-python!'
     })
 
