@@ -38,7 +38,6 @@ def index():
 def start():
     data = bottle.request.json
 
-    global board
 
     setBoardWidth(data["width"])
     setBoardHeight(data["height"])
