@@ -68,6 +68,7 @@ def move():
     head_position = myPosition(data["snakes"])
     
     if data["turn"] == 1:
+        print "First turn"
         move = 'right'
 
     else:
