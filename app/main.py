@@ -1,10 +1,22 @@
 import bottle
 import json
 
-moving = ""
+past_move = ""
 head_position = ""
 width = 0
 height = 0
+
+
+def myPosition(snakes):
+    for s in snakes:
+        if s["name"] == "Blank":
+            return s["coords"][0]
+
+def canMove(snake, m):
+    if m == 'right':
+        if snake[0] < width - 1 and past_move != 'left':
+            return true
+
 
 
 @bottle.get('/')
@@ -36,10 +48,17 @@ def move():
     data = bottle.request.json
     move = ""
 
+
     if data["turn"] == 1:
-        move = 'right'
+        head_position = myPosition(data["snakes"])
+        if canMove(head_position, 'right'):
+            move = 'right'
+        else:
+            move = 'up'
 
 
+
+    past_move = move
     return json.dumps({
         'move': move,
         'taunt': 'battlesnake-python!'
