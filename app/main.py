@@ -60,6 +60,7 @@ def move():
         else:
             move = 'left'
     
+    global past_move
 
     past_move = move
 
