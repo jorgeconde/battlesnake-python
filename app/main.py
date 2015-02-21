@@ -14,13 +14,13 @@ def setBoardWidth(w):
 
 def setBoardHeight(h):
     global board_height
-    global_height = h
+    board_height = h
 
 def boardWidth():
-    return global_width
+    return board_width
 
 def boardHeight():
-    return global_height
+    return board_height
 
 
 
