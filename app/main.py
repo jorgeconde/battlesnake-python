@@ -1,20 +1,12 @@
 import bottle
 import json
+from board import Board
 
 past_move = ""
 head_position = ""
-width = 0
-height = 0
-
-
-class Board():
-
-    def __init__(self, w, h):
-        self.width = w
-        self.height = h
-
 
 board = Board(0,0)
+
 
 def myPosition(snakes):
     for s in snakes:
@@ -43,6 +35,7 @@ def start():
 
     board.width = data["width"]
     board.height = data["height"])
+
 
     print "Board:", board.width, board.height
 
