@@ -14,7 +14,8 @@ def myPosition(snakes):
 
 def canMove(snake, m):
     if m == 'right':
-        if snake[0] < width - 1 and past_move != 'left':
+        print snake[0], str(width -1 ), past_move
+        if (snake[0] < width - 1) and past_move != 'left':
             return true
 
 
