@@ -104,7 +104,8 @@ def canMove(snake, m):
             return True
 
     elif m == 'up':
-        if (boardHeight() > 0) and past_move != 'down':
+        print "snake Y:", snake[1]
+        if (snake[1] > 0) and past_move != 'down':
             return True
 
     return False
