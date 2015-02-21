@@ -7,6 +7,20 @@ head_position = ""
 
 board = Board(0,0)
 
+def setBoardWidth(w):
+    global board
+    board.wdith = w
+
+def setBoardWidthHeight(h):
+    global board
+    board.height = h
+
+def boardWidth():
+    return board.width
+
+def boardHeight():
+    return board.height
+
 
 
 
@@ -26,10 +40,10 @@ def start():
 
     global board
 
-    board.width = data["width"]
-    board.height = data["height"]
+    setBoardWidth(data["width"])
+    setBoardHeight(data["height"])
 
-    print "Board: ", board.width, board.height
+    print "Board: ", boardWidth(), boardHeight()
 
     return json.dumps({
         'name': 'Blank',
