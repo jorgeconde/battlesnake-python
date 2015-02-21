@@ -80,7 +80,6 @@ def canMove(snake, m):
     if m == 'right':
         print "snake X: ", snake[0]
         print "Board Width: ", board.width
-
         print past_move
 
         if (snake[0] < board.width - 1) and past_move != 'left':
