@@ -65,6 +65,7 @@ def move():
     global past_move
 
     past_move = move
+    print "saved past move:" past_move
 
     return json.dumps({
         'move': move,
